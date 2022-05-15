@@ -1,30 +1,24 @@
-// class ArraySort {
-//   items: number[];
+import { GenericSort } from './GenericSort';
+import { NumbersCollection } from './NumbersCollection';
+import { CharactersCollection } from './CharactersCollection';
+import { LinkedList } from './LinkedList';
 
-//   constructor(items: number[]) {
-//     this.items = items;
-//   }
-// }
+// const numbersCollection = new NumbersCollection([11, 2, -3, 0]);
+// const arraySort = new GenericSort(numbersCollection);
+// arraySort.sort();
+// console.log(numbersCollection.items);
 
-// refactor as public
-class ArraySort {
-  constructor(public items: number[]) {}
+// const charactersCollection = new CharactersCollection('XaBacab');
+// const charSort = new GenericSort(charactersCollection);
+// charSort.sort();
+// console.log(charactersCollection.chars);
 
-  sort(): void {
-    const { length } = this.items;
-    // simple bubble sort
-    for (let i = 0; i < length; i++) {
-      for (let j = 0; j < length - i - 1; j++) {
-        if (this.items[j] > this.items[j + 1]) {
-          const leftHandVal = this.items[j];
-          this.items[j] = this.items[j + 1];
-          this.items[j + 1] = leftHandVal;
-        }
-      }
-    }
-  }
-}
+const linkedList = new LinkedList();
+linkedList.add(395);
+linkedList.add(-11);
+linkedList.add(-2);
+linkedList.add(6);
 
-const arraySort = new ArraySort([11, 2, -3, 0]);
-arraySort.sort();
-console.log(arraySort.items);
+const listSort = new GenericSort(linkedList);
+listSort.sort();
+linkedList.print();
