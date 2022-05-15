@@ -1,9 +1,11 @@
+import { GenericSort } from './GenericSort';
+
 class Node {
   next: Node | null = null;
   constructor(public value: number) {}
 }
 
-export class LinkedList {
+export class LinkedList extends GenericSort {
   head: Node | null = null;
 
   add(value: number): void {

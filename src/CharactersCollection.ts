@@ -1,5 +1,9 @@
-export class CharactersCollection {
-  constructor(public chars: string) {}
+import { GenericSort } from './GenericSort';
+
+export class CharactersCollection extends GenericSort {
+  constructor(public chars: string) {
+    super();
+  }
 
   get length(): number {
     return this.chars.length;

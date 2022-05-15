@@ -1,5 +1,9 @@
-export class NumbersCollection {
-  constructor(public items: number[]) {}
+import { GenericSort } from './GenericSort';
+
+export class NumbersCollection extends GenericSort {
+  constructor(public items: number[]) {
+    super();
+  }
 
   get length(): number {
     return this.items.length;
